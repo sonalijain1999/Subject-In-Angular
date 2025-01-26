@@ -1,0 +1,21 @@
+<form [formGroup]="userData">
+  <input
+    type="text"
+    name="text"
+    id="text"
+    placeholder="Change username"
+    formControlName="name"
+  />
+  <button type="submit" (click)="save()">Save</button>
+  <div>
+    <input
+      type="text"
+      name="userId"
+      id="userId"
+      placeholder="Change userId"
+      formControlName="id"
+    />
+  </div>
+  <button (click)="changeId()">Save</button>
+  <div>{{ userId }}</div>
+</form>
