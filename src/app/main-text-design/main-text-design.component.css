@@ -1,0 +1,107 @@
+.hover-effect{
+    color: #f9f9fa;
+}
+.name-3d {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 5em; /* Full viewport height */
+  }
+
+  
+header {
+    --tomorrow: 3s;
+    position: relative;
+    font-size: 5rem;
+    padding: 0.2em 0 0.2em;
+    perspective: 1000px;
+    color: rgb(247, 248, 250);
+  }
+  
+  header h1 {
+    position: relative;
+    font-size: .15em; /* effectively letter-spacing */
+    text-align: center;
+    font-style: italic;
+    animation: get-orbited var(--tomorrow) infinite;
+  }
+  
+  @keyframes get-orbited {
+    from, 50% {
+      z-index: 0;
+    }
+    51%, to {
+      z-index: 1;
+    }
+  }
+  
+  header h1 span {
+    display: inline-block;
+    font-size: 5rem;
+    white-space: pre;
+    animation:
+      letter
+      calc(var(--tomorrow) / 5)
+      calc(-2s + var(--i) * 100ms)
+      ease-in-out
+      infinite;
+  }
+  
+  @keyframes letter {
+    50% {
+      scale: 1.5;
+    }
+  }
+  header img {
+    --angle: calc(sin((var(--milliseconds, 0) - 500) / 666) * 68deg);
+    position: absolute;
+    /* top: 50%; */
+    left: 100%;
+    bottom: 10%;
+    transform:
+      rotate(var(--angle))
+      translate(-30%, -600%);
+    transform-origin: 0 50%;
+    transform-style: preserve-3d;
+    font-size: .3em;
+    padding: 0 .1em;
+    white-space: pre;
+    color: black;
+    font-family: monospace;
+    height: 2em;
+    animation:
+      orbit var(--tomorrow) ease-in-out infinite,
+      get-under var(--tomorrow) ease-in-out infinite;
+  }
+  @keyframes orbit {
+    50% {
+      transform:
+        rotate(var(--angle))
+        translate(-50%, 500%);
+    }
+  }
+  
+  @keyframes get-under {
+    from, 40%, to {
+      opacity: 1;
+      scale: 1;
+    }
+    
+    66% {
+      opacity: .8;
+      scale: .9;
+      rotate: x 50deg;
+    }
+  }
+  .profileContent{
+    padding:1em;
+    align-items: center;
+  }
+  .profilePic{
+    border-radius: 50%;
+    text-align: center;
+    width: 50%;
+  }
+  .picClass{
+    text-align: center !important;
+  }

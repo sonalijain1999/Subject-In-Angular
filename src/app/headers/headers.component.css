@@ -1,0 +1,11 @@
+.image{
+    height: 1em;
+    cursor: pointer;
+}
+.menu-items div {
+    font-size: 16px; 
+    font-family: "Merriweather", serif;
+    font-weight: 700;
+    font-style: normal;
+    padding-right: 0.5em;
+}
